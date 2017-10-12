@@ -452,57 +452,8 @@
         1,
         1,
         null
-      ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/views/home/index.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/views/quiz/question_1.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/views/quiz/question_2.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/views/quiz/question_3.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/views/quiz/question_4.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/views/quiz/question_5.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/views/quiz/results.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1507826480
+    "timestamp": 1507826642
   }
 }

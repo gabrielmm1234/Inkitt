@@ -27,7 +27,7 @@ class QuizzesController < ApplicationController
     if @quiz.save
       redirect_to question_2_path(@quiz)
     else
-      redirect_to root_path, notice: 'Something went wrong :('
+      redirect_to root_path, notice: "Something went wrong :("
     end
   end
 
@@ -35,7 +35,7 @@ class QuizzesController < ApplicationController
     if @quiz.update(quiz_params)
       deduct_redirect_path(@quiz, params)
     else
-      redirect_to root_path, notice: 'Something went wrong :('
+      redirect_to root_path, notice: "Something went wrong :("
     end
   end
 
