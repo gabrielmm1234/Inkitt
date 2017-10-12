@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
-  get 'quiz/question_1', as: 'question_1'
+  get 'quizzes/question_1', as: 'question_1'
 
-  get 'quiz/question_2', as: 'question_2'
+  get 'quizzes/question_2/:id', to: 'quizzes#question_2', as: 'question_2'
 
-  get 'quiz/question_3', as: 'question_3'
+  get 'quizzes/question_3/:id', to: 'quizzes#question_3', as: 'question_3'
 
-  get 'quiz/question_4', as: 'question_4'
+  get 'quizzes/question_4/:id', to: 'quizzes#question_4', as: 'question_4'
 
-  get 'quiz/question_5', as: 'question_5'
+  get 'quizzes/question_5/:id', to: 'quizzes#question_5', as: 'question_5'
 
-  get 'quiz/results', as: 'results'
+  get 'quizzes/results', as: 'results'
 
   root 'home#index'
+
+  resources :quizzes
 end

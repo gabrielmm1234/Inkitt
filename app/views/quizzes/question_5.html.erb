@@ -1,0 +1,29 @@
+<div id="parent" class="row">
+  <div id="child" class="col s6 offset-s3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Question 5</span>
+        <p>Have you cried in Brazil x Germany game, in the last world cup?</p>
+        <%= form_for(@quiz) do |f| %>
+          <div class="mt-4">
+            <%= radio_button_tag 'quiz[answer5]', 1, true %>
+            <%= label_tag 'quiz_answer5_1', "No!" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer5]', 2 %>
+            <%= label_tag 'quiz_answer5_2', "Yes" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer5]', 3 %>
+            <%= label_tag 'quiz_answer5_3', "Maybe :(" %>
+          </div>
+          <div class="card-action center-align mt-4">
+            <div class="center-align">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit answer
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

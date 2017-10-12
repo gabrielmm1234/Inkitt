@@ -263,8 +263,21 @@
         null,
         null
       ],
+      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/factories/quizzes.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/config/routes.rb": [
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -303,17 +316,11 @@
         1,
         null
       ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/controllers/quiz_controller_spec.rb": [
+      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/controllers/quizzes_controller_spec.rb": [
         1,
         null,
         1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
+        5,
         null,
         1,
         1,
@@ -348,11 +355,22 @@
         1,
         1,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null
       ],
-      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/app/controllers/quiz_controller.rb": [
+      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/app/controllers/quizzes_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
         1,
         1,
         null,
@@ -371,6 +389,68 @@
         null,
         1,
         null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/models/quiz_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/app/models/quiz.rb": [
+        1,
+        null
+      ],
+      "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/app/models/application_record.rb": [
+        1,
+        1,
         null
       ],
       "/home/gabriel/Desktop/Códigos/rails/inkitt/inkitt/spec/views/home/index.html.erb_spec.rb": [
@@ -423,6 +503,6 @@
         null
       ]
     },
-    "timestamp": 1507813012
+    "timestamp": 1507826480
   }
 }

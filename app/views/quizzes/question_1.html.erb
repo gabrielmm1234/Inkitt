@@ -1,0 +1,26 @@
+<div id="parent" class="row">
+  <div id="child" class="col s6 offset-s3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Question 1</span>
+        <p>Do you want to be approved in Inkitt test?</p>
+        <%= form_for(@quiz) do |f| %>
+          <div class="mt-4">
+            <%= radio_button_tag 'quiz[answer1]', 1, true %>
+            <%= label_tag 'quiz_answer1_1', "Yes" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer1]', 2 %>
+            <%= label_tag 'quiz_answer1_2', "No" %>
+          </div>
+          <div class="card-action center-align mt-4">
+            <div class="center-align">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit answer
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

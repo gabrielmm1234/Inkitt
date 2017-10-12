@@ -1,0 +1,32 @@
+<div id="parent" class="row">
+  <div id="child" class="col s6 offset-s3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Question 3</span>
+        <p>What's your favorite programming language?</p>
+        <%= form_for(@quiz) do |f| %>
+          <div class="mt-4">
+            <%= radio_button_tag 'quiz[answer3]', 1, true %>
+            <%= label_tag 'quiz_answer3_1', "Java" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer3]', 2 %>
+            <%= label_tag 'quiz_answer3_2', "Ruby" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer3]', 3 %>
+            <%= label_tag 'quiz_answer3_3', "Javascript" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer3]', 4 %>
+            <%= label_tag 'quiz_answer3_4', "C" %>
+          </div>
+          <div class="card-action center-align mt-4">
+            <div class="center-align">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit answer
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div id="parent" class="row">
+  <div id="child" class="col s6 offset-s3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Question 4</span>
+        <p>How many years of experience programming with your chosen language?</p>
+        <%= form_for(@quiz) do |f| %>
+          <div class="mt-4">
+            <%= radio_button_tag 'quiz[answer4]', 1, true %>
+            <%= label_tag 'quiz_answer4_1', "less than 1 year" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer4]', 2 %>
+            <%= label_tag 'quiz_answer4_2', "1-2 years" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer4]', 3 %>
+            <%= label_tag 'quiz_answer4_3', "2-3 years" %>
+            </br>
+            <%= radio_button_tag 'quiz[answer4]', 4 %>
+            <%= label_tag 'quiz_answer4_4', "3-4 years" %>
+          </div>
+          <div class="card-action center-align mt-4">
+            <div class="center-align">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit answer
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
