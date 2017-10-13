@@ -5,5 +5,6 @@ FactoryGirl.define do
     answer3 1
     answer4 2
     answer5 1
+    completed true
   end
 end
