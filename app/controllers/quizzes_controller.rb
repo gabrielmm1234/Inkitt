@@ -33,12 +33,12 @@ class QuizzesController < ApplicationController
 
   def create
     @quiz = Quiz.new(quiz_params)
-    if @quiz.save
+    if allow_create(@quiz)
       cookies.permanent[:quiz_id] = @quiz.id
       cookies[:question_number] = 2
       redirect_to question_2_path
     else
-      redirect_to root_path, notice: "Something went wrong :("
+      redirect_to_correct_path
     end
   end
 
@@ -47,8 +47,7 @@ class QuizzesController < ApplicationController
       cookies[:question_number] = cookies[:question_number].to_i + 1
       deduct_redirect_path
     else
-      redirect_to "/quizzes/question_#{cookies[:question_number]}",
-                  notice: "You cannot go back and change your answer, therefore your previous answer was not accepted!"
+      redirect_to_correct_path
     end
   end
 
@@ -56,6 +55,15 @@ class QuizzesController < ApplicationController
 
   def allow_update(quiz)
     (params[:quiz].keys.to_s.eql? "[\"answer#{cookies[:question_number]}\"]") && quiz.update(quiz_params)
+  end
+
+  def allow_create(quiz)
+    (params[:quiz].keys.to_s.eql? "[\"answer#{cookies[:question_number]}\"]") && quiz.save
+  end
+
+  def redirect_to_correct_path
+    redirect_to "/quizzes/question_#{cookies[:question_number]}",
+                notice: "You cannot go back and change your answer, therefore your previous answer was not accepted!"
   end
 
   def allow_request
