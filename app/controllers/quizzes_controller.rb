@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: %i[question_2 question_3 question_4
                                     question_5 update]
-  before_action :allow_request, except: %i[results]
+  before_action :allow_request, except: %i[results answers_distribution]
 
   def question_1
     @quiz = Quiz.new
@@ -20,6 +20,11 @@ class QuizzesController < ApplicationController
   end
 
   def results
+  end
+
+  def answers_distribution
+    @answers_distribution = Quiz.retrieve_answers_distribution
+    render json: @answers_distribution
   end
 
   def create
