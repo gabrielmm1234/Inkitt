@@ -1,15 +1,9 @@
-<% flash.each do |k, v| %>
-  <div class="alert alert-success" role="alert" id="<%= k %>">
-    <div class="container">
-      <div class="alert-icon">
-        <i class="fa fa-thumbs-o-up"></i>
-      </div>
+<div style="margin-left: 10px; margin-right: 10px;">
+  <% flash.each do |k, v| %>
+  <div class="card green" role="alert" id="<%= k %>">
+    <div class="container card-content white-text">
       <%= v %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">
-          <i class="fa fa-times"></i>
-        </span>
-      </button>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>

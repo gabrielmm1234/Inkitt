@@ -26,13 +26,13 @@ class Quiz < ApplicationRecord
     quiz = Quiz.where(completed: true).group(answer_number).count
     quiz.each do |value, quantity|
       answer = {}
-      if value.eql? 1
-        answer[:name] = option1
-      elsif value.eql? 2
-        answer[:name] = option2
-      else
-        answer[:name] = option3
-      end
+      answer[:name] = if value.eql? 1
+                        option1
+                      elsif value.eql? 2
+                        option2
+                      else
+                        option3
+                      end
       answer[:y] = quantity
       filtered_quiz << answer
     end
@@ -44,15 +44,15 @@ class Quiz < ApplicationRecord
     quiz = Quiz.where(completed: true).group(answer_number).count
     quiz.each do |value, quantity|
       answer = {}
-      if value.eql? 1
-        answer[:name] = option1
-      elsif value.eql? 2
-        answer[:name] = option2
-      elsif value.eql? 3
-        answer[:name] = option3
-      else
-        answer[:name] = option4
-      end
+      answer[:name] = if value.eql? 1
+                        option1
+                      elsif value.eql? 2
+                        option2
+                      elsif value.eql? 3
+                        option3
+                      else
+                        option4
+                      end
       answer[:y] = quantity
       filtered_quiz << answer
     end
