@@ -1,9 +1,9 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: %i[question_2 question_3 question_4
-                                    question_5 update]
   before_action :handle_completed_request, except: %i[results answers_distribution]
   before_action :allow_request, only: %i[question_1 question_2 question_3 question_4
                                          question_5]
+  before_action :set_quiz, only: %i[question_2 question_3 question_4
+                                    question_5 update]
 
   def question_1
     @quiz = Quiz.new
@@ -67,11 +67,8 @@ class QuizzesController < ApplicationController
   end
 
   def allow_request
-    if cookies[:question_number]
-      unless action_name.eql? "question_#{cookies[:question_number]}"
-        redirect_to "/quizzes/question_#{cookies[:question_number]}"
-      end
-    end
+    return unless cookies[:question_number]
+    redirect_to "/quizzes/question_#{cookies[:question_number]}" unless action_name.eql? "question_#{cookies[:question_number]}"
   end
 
   def handle_completed_request
