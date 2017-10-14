@@ -56,28 +56,35 @@ class QuizzesController < ApplicationController
 
   private
 
+  # Method used to allow put request based on the user current question number
   def update_allowed?
     params[:quiz].keys.to_s == "[\"answer#{cookies[:question_number]}\"]"
   end
 
+  # Method used to allow post request based on the user current question number
   def create_allowed?
     params[:quiz].keys.to_s == "[\"answer#{cookies[:question_number]}\"]"
   end
 
+  # Method used to redirect to the correct question if the user tries to go back or forward
   def redirect_to_correct_path
     redirect_to "/quizzes/question_#{cookies[:question_number]}",
                 notice: "You cannot go back and change your answer, therefore your previous answer was not accepted!"
   end
 
+  # Method used to allow get request based on the user current question number
   def allow_request
     return unless cookies[:question_number]
     redirect_to "/quizzes/question_#{cookies[:question_number]}" unless action_name == "question_#{cookies[:question_number]}"
   end
 
+  # Method used to check if the user has already finished the quiz, and redirect
+  # to results if the quiz is completed
   def handle_completed_request
     redirect_to results_path if cookies[:completed]
   end
 
+  # Update use this method to pick the correct path to redirect
   def deduct_redirect_path
     if cookies[:question_number] == TOTAL_ASNWERS + 1
       finish_quiz
@@ -86,6 +93,7 @@ class QuizzesController < ApplicationController
     end
   end
 
+  # Complete the quiz and redirects to the results page.
   def finish_quiz
     quiz = Quiz.find(cookies[:quiz_id])
     quiz.update(completed: true)
