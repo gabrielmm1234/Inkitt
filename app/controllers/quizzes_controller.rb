@@ -2,26 +2,16 @@ class QuizzesController < ApplicationController
   TOTAL_ASNWERS = 5
 
   before_action :handle_completed_request, except: %i[results answers_distribution]
-  before_action :allow_request, only: %i[question_1 question_2 question_3 question_4
-                                         question_5]
-  before_action :set_quiz, only: %i[question_2 question_3 question_4
-                                    question_5 update]
+  before_action :set_quiz, only: %i[update]
 
-  def question_1
-    @quiz = Quiz.new
-    cookies.permanent[:question_number] = 1
-  end
-
-  def question_2
-  end
-
-  def question_3
-  end
-
-  def question_4
-  end
-
-  def question_5
+  def quiz
+    if cookies[:question_number]
+      @quiz = Quiz.find(cookies[:quiz_id])
+    else
+      @quiz = Quiz.new
+      cookies.permanent[:question_number] = 1
+    end
+    render "question_#{cookies[:question_number]}"
   end
 
   def results
@@ -38,7 +28,7 @@ class QuizzesController < ApplicationController
       @quiz.save
       cookies.permanent[:quiz_id] = @quiz.id
       cookies[:question_number] = 2
-      redirect_to question_2_path
+      redirect_to quiz_path
     else
       redirect_to_correct_path
     end
@@ -68,14 +58,8 @@ class QuizzesController < ApplicationController
 
   # Method used to redirect to the correct question if the user tries to go back or forward
   def redirect_to_correct_path
-    redirect_to "/quizzes/question_#{cookies[:question_number]}",
+    redirect_to quiz_path,
                 notice: "You cannot go back and change your answer, therefore your previous answer was not accepted!"
-  end
-
-  # Method used to allow get request based on the user current question number
-  def allow_request
-    return unless cookies[:question_number]
-    redirect_to "/quizzes/question_#{cookies[:question_number]}" unless action_name == "question_#{cookies[:question_number]}"
   end
 
   # Method used to check if the user has already finished the quiz, and redirect
@@ -89,7 +73,7 @@ class QuizzesController < ApplicationController
     if cookies[:question_number] == TOTAL_ASNWERS + 1
       finish_quiz
     else
-      redirect_to "/quizzes/question_#{cookies[:question_number]}"
+      redirect_to quiz_path
     end
   end
 
