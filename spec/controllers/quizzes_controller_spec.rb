@@ -3,50 +3,24 @@ require 'rails_helper'
 RSpec.describe QuizzesController, type: :controller do
   let(:quiz) { FactoryGirl.create :quiz }
 
-  describe "GET #question_1" do
+  describe "GET #quiz" do
     it "returns http success" do
-      get :question_1
+      get :quiz
       expect(response).to have_http_status(:success)
     end
 
-    it "sets the question_number cookie to one" do
-      get :question_1
+    it "sets the question_number cookie to one in the first question" do
+      get :quiz
       expect(response.cookies['question_number']).to eq('1')
     end
-  end
 
-  describe "GET #question_2" do
-    it "returns http success" do
-      request.cookies[:quiz_id] = quiz.id
-      get :question_2
-      expect(response).to have_http_status(:success)
+    it "renders the correct page according to user question number" do
+      request.cookies['question_number'] = 2
+      request.cookies['quiz_id'] = quiz.id
+      get :quiz
+      expect(response).to render_template("question_2")
     end
   end
-
-  describe "GET #question_3" do
-    it "returns http success" do
-      request.cookies[:quiz_id] = quiz.id
-      get :question_3, params: { id: quiz.id }
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #question_4" do
-    it "returns http success" do
-      request.cookies[:quiz_id] = quiz.id
-      get :question_4, params: { id: quiz.id }
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #question_5" do
-    it "returns http success" do
-      request.cookies[:quiz_id] = quiz.id
-      get :question_5, params: { id: quiz.id }
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 
   describe "GET #results" do
     it "returns http success" do
@@ -75,34 +49,18 @@ RSpec.describe QuizzesController, type: :controller do
     end
   end
 
-  describe "allow_request" do
-    it "allows the request if this is the current user question" do
-      request.cookies[:quiz_id] = quiz.id
-      request.cookies['question_number'] = 2
-      get :question_2
-      expect(response).to have_http_status(:success)
-    end
-
-    it "blocks the request if the user is trying to go back using the url" do
-      request.cookies[:quiz_id] = quiz.id
-      request.cookies['question_number'] = 3
-      get :question_2
-      response.should redirect_to "/quizzes/question_3"
-    end
-  end
-
   describe "handle_completed_request" do
     it "allows the request if the quiz is not completed yet" do
       request.cookies[:quiz_id] = quiz.id
       request.cookies['question_number'] = 2
-      get :question_2
+      get :quiz
       expect(response).to have_http_status(:success)
     end
 
     it "blocks the request if the quiz is completed" do
       request.cookies[:quiz_id] = quiz.id
       request.cookies[:completed] = true
-      get :question_2
+      get :quiz
       response.should redirect_to results_path
     end
   end
@@ -120,7 +78,7 @@ RSpec.describe QuizzesController, type: :controller do
       request.cookies['question_number'] = 2
       post :create, params: { quiz: { answer1: 2 } }
       expect(Quiz.last.answer1).to eq(1)
-      response.should redirect_to "/quizzes/question_2"
+      response.should redirect_to quiz_path
     end
 
     it "allows creation if the user tries to answer it's current question" do
@@ -145,7 +103,7 @@ RSpec.describe QuizzesController, type: :controller do
       request.cookies['question_number'] = 4
       put :update, params: { id: quiz.id, quiz: { answer3: 2 } }
       expect(Quiz.last.answer3).to eq(1)
-      response.should redirect_to "/quizzes/question_4"
+      response.should redirect_to quiz_path
     end
 
     it "allows updates if the user tries to answer it's current question" do
@@ -159,7 +117,7 @@ RSpec.describe QuizzesController, type: :controller do
       request.cookies[:quiz_id] = quiz.id
       request.cookies['question_number'] = 3
       put :update, params: { id: quiz.id, quiz: { answer3: 2 } }
-      response.should redirect_to "/quizzes/question_4"
+      response.should redirect_to quiz_path
     end
 
     it "redirects to results screen if the user completes the quiz" do
