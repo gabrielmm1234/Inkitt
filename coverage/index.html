@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-14T13:50:44-03:00">2017-10-14T13:50:44-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-14T13:55:20-03:00">2017-10-14T13:55:20-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -123,7 +123,7 @@
       <tr>
         <td class="strong"><a href="#4d14dee62fc17d09934f9216d06bd44299c47335" class="src_link" title="app/models/quiz.rb">app/models/quiz.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
+        <td>16</td>
         <td>7</td>
         <td>7</td>
         <td>0</td>
@@ -1270,100 +1270,88 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  ANSWER_OPTIONS = {</code>
+          <code class="ruby">  ANSWER_OPTIONS = {answer1: %w[Yes No],</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
           
           
-          <code class="ruby">                      answer1: %w[Yes No],</code>
+          <code class="ruby">                    answer2: %w[1\ month 6\ months 1\ year],</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
           
           
-          <code class="ruby">                      answer2: %w[1\ month 6\ months 1\ year],</code>
+          <code class="ruby">                    answer3: %w[Java Ruby Javascript C],</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby">                      answer3: %w[Java Ruby Javascript C],</code>
+          <code class="ruby">                    answer4: %w[less\ than\ 1\ year 1-2\ years 2-3\ years 3-4\ years],</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">                      answer4: %w[less\ than\ 1\ year 1-2\ years 2-3\ years 3-4\ years],</code>
+          <code class="ruby">                    answer5: %w[No! Yes Maybe\ :(]}.freeze</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">                      answer5: %w[No! Yes Maybe\ :(]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">                    }.freeze</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.retrieve_answers_distribution</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="11">
+        <li class="covered" data-hits="24" data-linenumber="9">
           <span class="hits">24</span>
           
           <code class="ruby">    ANSWER_OPTIONS.keys.map {|key| build_answer_distribution(key) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.build_answer_distribution(answer_number)</code>
         </li>
       
-        <li class="covered" data-hits="23" data-linenumber="15">
+        <li class="covered" data-hits="23" data-linenumber="13">
           <span class="hits">23</span>
           
           <code class="ruby">    quiz = Quiz.where(completed: true).group(answer_number).count</code>
         </li>
       
-        <li class="covered" data-hits="41" data-linenumber="16">
+        <li class="covered" data-hits="41" data-linenumber="14">
           <span class="hits">41</span>
           
           <code class="ruby">    quiz.map {|value, quantity| {name: ANSWER_OPTIONS[answer_number][value - 1], y: quantity} }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
