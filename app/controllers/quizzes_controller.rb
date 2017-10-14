@@ -1,4 +1,6 @@
 class QuizzesController < ApplicationController
+  TOTAL_ASNWERS = 5
+
   before_action :handle_completed_request, except: %i[results answers_distribution]
   before_action :allow_request, only: %i[question_1 question_2 question_3 question_4
                                          question_5]
@@ -27,8 +29,7 @@ class QuizzesController < ApplicationController
   end
 
   def answers_distribution
-    @answers_distribution = Quiz.retrieve_answers_distribution
-    render json: @answers_distribution
+    render json: Quiz.retrieve_answers_distribution
   end
 
   def create
@@ -54,11 +55,11 @@ class QuizzesController < ApplicationController
   private
 
   def allow_update(quiz)
-    (params[:quiz].keys.to_s.eql? "[\"answer#{cookies[:question_number]}\"]") && quiz.update(quiz_params)
+    (params[:quiz].keys.to_s == "[\"answer#{cookies[:question_number]}\"]") && quiz.update(quiz_params)
   end
 
   def allow_create(quiz)
-    (params[:quiz].keys.to_s.eql? "[\"answer#{cookies[:question_number]}\"]") && quiz.save
+    (params[:quiz].keys.to_s == "[\"answer#{cookies[:question_number]}\"]") && quiz.save
   end
 
   def redirect_to_correct_path
@@ -68,7 +69,7 @@ class QuizzesController < ApplicationController
 
   def allow_request
     return unless cookies[:question_number]
-    redirect_to "/quizzes/question_#{cookies[:question_number]}" unless action_name.eql? "question_#{cookies[:question_number]}"
+    redirect_to "/quizzes/question_#{cookies[:question_number]}" unless action_name == "question_#{cookies[:question_number]}"
   end
 
   def handle_completed_request
@@ -76,7 +77,7 @@ class QuizzesController < ApplicationController
   end
 
   def deduct_redirect_path
-    if cookies[:question_number].eql? 6
+    if cookies[:question_number] == TOTAL_ASNWERS + 1
       finish_quiz
     else
       redirect_to "/quizzes/question_#{cookies[:question_number]}"

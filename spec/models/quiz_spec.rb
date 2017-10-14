@@ -29,7 +29,7 @@ RSpec.describe Quiz, type: :model do
   describe 'build_answer_with_two_options' do
     it "creates the answers distribution for question with two answer options" do
       expected_answer_distribution = [{:name=>"Yes", :y=>1}]
-      answer_distribution = Quiz.build_answer_with_two_options("Yes", "No", "answer1")
+      answer_distribution = Quiz.build_answer_distribution(:answer1)
       expect(answer_distribution).to eq(expected_answer_distribution)
     end
   end
@@ -37,7 +37,7 @@ RSpec.describe Quiz, type: :model do
   describe 'build_answer_with_three_options' do
     it "creates the answers distribution for questions with three answer options" do
       expected_answer_distribution = [{:name=>"6 months", :y=>1}]
-      answer_distribution = Quiz.build_answer_with_three_options("1 month", "6 months", "1 year", "answer2")
+      answer_distribution = Quiz.build_answer_distribution(:answer2)
       expect(answer_distribution).to eq(expected_answer_distribution)
     end
   end
@@ -45,7 +45,7 @@ RSpec.describe Quiz, type: :model do
   describe 'build_answer_with_four_options' do
     it "creates the answers distribution for questions with four answer options" do
       expected_answer_distribution = [{:name=>"Java", :y=>1}]
-      answer_distribution = Quiz.build_answer_with_four_options("Java", "Ruby", "Javascript", "C", "answer3")
+      answer_distribution = Quiz.build_answer_distribution(:answer3)
       expect(answer_distribution).to eq(expected_answer_distribution)
     end
   end
