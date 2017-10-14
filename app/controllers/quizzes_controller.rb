@@ -88,8 +88,6 @@ class QuizzesController < ApplicationController
     quiz = Quiz.find(cookies[:quiz_id])
     quiz.update(completed: true)
     cookies.permanent[:completed] = true
-    cookies.delete :question_number
-    cookies.delete :quiz_id
     redirect_to results_path
   end
 
