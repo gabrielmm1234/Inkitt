@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-14T17:33:48-03:00">2017-10-14T17:33:48-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-14T17:46:09-03:00">2017-10-14T17:46:09-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -707,115 +707,115 @@
         <li class="covered" data-hits="3" data-linenumber="37">
           <span class="hits">3</span>
           
-          <code class="ruby">    if allow_create(@quiz)</code>
+          <code class="ruby">    if create_allowed?</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="38">
           <span class="hits">2</span>
           
-          <code class="ruby">      cookies.permanent[:quiz_id] = @quiz.id</code>
+          <code class="ruby">      @quiz.save</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="39">
           <span class="hits">2</span>
           
-          <code class="ruby">      cookies[:question_number] = 2</code>
+          <code class="ruby">      cookies.permanent[:quiz_id] = @quiz.id</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="40">
           <span class="hits">2</span>
           
+          <code class="ruby">      cookies[:question_number] = 2</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="41">
+          <span class="hits">2</span>
+          
           <code class="ruby">      redirect_to question_2_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to_correct_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
+        <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="47">
+        <li class="covered" data-hits="5" data-linenumber="48">
           <span class="hits">5</span>
           
-          <code class="ruby">    if allow_update(@quiz)</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="48">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      cookies[:question_number] = cookies[:question_number].to_i + 1</code>
+          <code class="ruby">    if update_allowed?</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="49">
           <span class="hits">4</span>
           
+          <code class="ruby">      @quiz.update(quiz_params)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="50">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      cookies[:question_number] = cookies[:question_number].to_i + 1</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="51">
+          <span class="hits">4</span>
+          
           <code class="ruby">      deduct_redirect_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      redirect_to_correct_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      redirect_to_correct_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="55">
           
-          <code class="ruby">  private</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
@@ -827,217 +827,217 @@
         <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">  def allow_update(quiz)</code>
+          <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="58">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    (params[:quiz].keys.to_s == &quot;[\&quot;answer#{cookies[:question_number]}\&quot;]&quot;) &amp;&amp; quiz.update(quiz_params)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="61">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
-          <code class="ruby">  def allow_create(quiz)</code>
+          <code class="ruby">  def update_allowed?</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="62">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="60">
+          <span class="hits">5</span>
           
-          <code class="ruby">    (params[:quiz].keys.to_s == &quot;[\&quot;answer#{cookies[:question_number]}\&quot;]&quot;) &amp;&amp; quiz.save</code>
+          <code class="ruby">    params[:quiz].keys.to_s == &quot;[\&quot;answer#{cookies[:question_number]}\&quot;]&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create_allowed?</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="64">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    params[:quiz].keys.to_s == &quot;[\&quot;answer#{cookies[:question_number]}\&quot;]&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
           <code class="ruby">  def redirect_to_correct_path</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="66">
+        <li class="covered" data-hits="2" data-linenumber="68">
           <span class="hits">2</span>
           
           <code class="ruby">    redirect_to &quot;/quizzes/question_#{cookies[:question_number]}&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">                notice: &quot;You cannot go back and change your answer, therefore your previous answer was not accepted!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="72">
           <span class="hits">1</span>
           
           <code class="ruby">  def allow_request</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="71">
+        <li class="covered" data-hits="9" data-linenumber="73">
           <span class="hits">9</span>
           
           <code class="ruby">    return unless cookies[:question_number]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="72">
+        <li class="covered" data-hits="3" data-linenumber="74">
           <span class="hits">3</span>
           
           <code class="ruby">    redirect_to &quot;/quizzes/question_#{cookies[:question_number]}&quot; unless action_name == &quot;question_#{cookies[:question_number]}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
           <code class="ruby">  def handle_completed_request</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="76">
+        <li class="covered" data-hits="18" data-linenumber="78">
           <span class="hits">18</span>
           
           <code class="ruby">    redirect_to results_path if cookies[:completed]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="79">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def deduct_redirect_path</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="80">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    if cookies[:question_number] == TOTAL_ASNWERS + 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="81">
           <span class="hits">1</span>
           
+          <code class="ruby">  def deduct_redirect_path</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="82">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    if cookies[:question_number] == TOTAL_ASNWERS + 1</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
+          
           <code class="ruby">      finish_quiz</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="83">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      redirect_to &quot;/quizzes/question_#{cookies[:question_number]}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="covered" data-hits="3" data-linenumber="85">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      redirect_to &quot;/quizzes/question_#{cookies[:question_number]}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="87">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def finish_quiz</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="88">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    quiz = Quiz.find(cookies[:quiz_id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
-          <code class="ruby">    quiz.update(completed: true)</code>
+          <code class="ruby">  def finish_quiz</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="90">
           <span class="hits">1</span>
           
-          <code class="ruby">    cookies.permanent[:completed] = true</code>
+          <code class="ruby">    quiz = Quiz.find(cookies[:quiz_id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
-          <code class="ruby">    cookies.delete :question_number</code>
+          <code class="ruby">    quiz.update(completed: true)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
-          <code class="ruby">    cookies.delete :quiz_id</code>
+          <code class="ruby">    cookies.permanent[:completed] = true</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="93">

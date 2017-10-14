@@ -34,7 +34,8 @@ class QuizzesController < ApplicationController
 
   def create
     @quiz = Quiz.new(quiz_params)
-    if allow_create(@quiz)
+    if create_allowed?
+      @quiz.save
       cookies.permanent[:quiz_id] = @quiz.id
       cookies[:question_number] = 2
       redirect_to question_2_path
@@ -44,7 +45,8 @@ class QuizzesController < ApplicationController
   end
 
   def update
-    if allow_update(@quiz)
+    if update_allowed?
+      @quiz.update(quiz_params)
       cookies[:question_number] = cookies[:question_number].to_i + 1
       deduct_redirect_path
     else
@@ -54,12 +56,12 @@ class QuizzesController < ApplicationController
 
   private
 
-  def allow_update(quiz)
-    (params[:quiz].keys.to_s == "[\"answer#{cookies[:question_number]}\"]") && quiz.update(quiz_params)
+  def update_allowed?
+    params[:quiz].keys.to_s == "[\"answer#{cookies[:question_number]}\"]"
   end
 
-  def allow_create(quiz)
-    (params[:quiz].keys.to_s == "[\"answer#{cookies[:question_number]}\"]") && quiz.save
+  def create_allowed?
+    params[:quiz].keys.to_s == "[\"answer#{cookies[:question_number]}\"]"
   end
 
   def redirect_to_correct_path
