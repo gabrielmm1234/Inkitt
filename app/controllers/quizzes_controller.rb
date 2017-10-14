@@ -5,7 +5,7 @@ class QuizzesController < ApplicationController
   before_action :set_quiz, only: %i[update]
 
   def quiz
-    if cookies[:question_number]
+    if cookies[:question_number] && cookies[:quiz_id]
       @quiz = Quiz.find(cookies[:quiz_id])
     else
       @quiz = Quiz.new
