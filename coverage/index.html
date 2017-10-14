@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-14T10:20:12-03:00">2017-10-14T10:20:12-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-14T10:56:18-03:00">2017-10-14T10:56:18-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.73%</span></span>
+    (<span class="covered_percent"><span class="green">99.06%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.41
+         1.81
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>28</b> files in total.
-    <b>255</b> relevant lines. 
-    <span class="green"><b>239</b> lines covered</span> and
-    <span class="red"><b>16</b> lines missed </span>
+    <b>320</b> relevant lines. 
+    <span class="green"><b>317</b> lines covered</span> and
+    <span class="red"><b>3</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -72,12 +72,12 @@
       
       <tr>
         <td class="strong"><a href="#e1e2b672d825f605271f835650bc61723f6ab3ae" class="src_link" title="app/controllers/quizzes_controller.rb">app/controllers/quizzes_controller.rb</a></td>
-        <td class="red strong">76.36 %</td>
+        <td class="green strong">100.0 %</td>
         <td>103</td>
         <td>55</td>
-        <td>42</td>
-        <td>13</td>
-        <td>1.1</td>
+        <td>55</td>
+        <td>0</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
@@ -127,7 +127,7 @@
         <td>42</td>
         <td>39</td>
         <td>3</td>
-        <td>3.1</td>
+        <td>4.9</td>
       </tr>
       
       <tr>
@@ -293,9 +293,9 @@
       <tr>
         <td class="strong"><a href="#6790de154dfe0e378e5725d1faa519be9c342a06" class="src_link" title="spec/controllers/quizzes_controller_spec.rb">spec/controllers/quizzes_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>78</td>
-        <td>48</td>
-        <td>48</td>
+        <td>173</td>
+        <td>113</td>
+        <td>113</td>
         <td>0</td>
         <td>1.1</td>
       </tr>
@@ -477,11 +477,11 @@
         <div class="source_table" id="e1e2b672d825f605271f835650bc61723f6ab3ae">
   <div class="header">
     <h3>app/controllers/quizzes_controller.rb</h3>
-    <h4><span class="red">76.36 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>55</b> relevant lines. 
-      <span class="green"><b>42</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <span class="green"><b>55</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -662,14 +662,14 @@
           <code class="ruby">  def answers_distribution</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
-          
+        <li class="covered" data-hits="2" data-linenumber="30">
+          <span class="hits">2</span>
           
           <code class="ruby">    @answers_distribution = Quiz.retrieve_answers_distribution</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
+        <li class="covered" data-hits="2" data-linenumber="31">
+          <span class="hits">2</span>
           
           <code class="ruby">    render json: @answers_distribution</code>
         </li>
@@ -692,32 +692,32 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="35">
+          <span class="hits">3</span>
           
           <code class="ruby">    @quiz = Quiz.new(quiz_params)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="36">
+          <span class="hits">3</span>
           
           <code class="ruby">    if allow_create(@quiz)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="37">
+          <span class="hits">2</span>
           
           <code class="ruby">      cookies.permanent[:quiz_id] = @quiz.id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
           
           <code class="ruby">      cookies[:question_number] = 2</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="39">
+          <span class="hits">2</span>
           
           <code class="ruby">      redirect_to question_2_path</code>
         </li>
@@ -728,8 +728,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="41">
-          
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
           
           <code class="ruby">      redirect_to_correct_path</code>
         </li>
@@ -758,20 +758,20 @@
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="46">
+          <span class="hits">5</span>
           
           <code class="ruby">    if allow_update(@quiz)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="47">
+          <span class="hits">4</span>
           
           <code class="ruby">      cookies[:question_number] = cookies[:question_number].to_i + 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="48">
+          <span class="hits">4</span>
           
           <code class="ruby">      deduct_redirect_path</code>
         </li>
@@ -782,8 +782,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="50">
-          
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
           
           <code class="ruby">      redirect_to_correct_path</code>
         </li>
@@ -824,8 +824,8 @@
           <code class="ruby">  def allow_update(quiz)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="57">
+          <span class="hits">5</span>
           
           <code class="ruby">    (params[:quiz].keys.to_s.eql? &quot;[\&quot;answer#{cookies[:question_number]}\&quot;]&quot;) &amp;&amp; quiz.update(quiz_params)</code>
         </li>
@@ -848,8 +848,8 @@
           <code class="ruby">  def allow_create(quiz)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="61">
+          <span class="hits">3</span>
           
           <code class="ruby">    (params[:quiz].keys.to_s.eql? &quot;[\&quot;answer#{cookies[:question_number]}\&quot;]&quot;) &amp;&amp; quiz.save</code>
         </li>
@@ -872,8 +872,8 @@
           <code class="ruby">  def redirect_to_correct_path</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="65">
-          
+        <li class="covered" data-hits="2" data-linenumber="65">
+          <span class="hits">2</span>
           
           <code class="ruby">    redirect_to &quot;/quizzes/question_#{cookies[:question_number]}&quot;,</code>
         </li>
@@ -902,14 +902,14 @@
           <code class="ruby">  def allow_request</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="70">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="9" data-linenumber="70">
+          <span class="hits">9</span>
           
           <code class="ruby">    return unless cookies[:question_number]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
-          
+        <li class="covered" data-hits="3" data-linenumber="71">
+          <span class="hits">3</span>
           
           <code class="ruby">    redirect_to &quot;/quizzes/question_#{cookies[:question_number]}&quot; unless action_name.eql? &quot;question_#{cookies[:question_number]}&quot;</code>
         </li>
@@ -932,8 +932,8 @@
           <code class="ruby">  def handle_completed_request</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="75">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="18" data-linenumber="75">
+          <span class="hits">18</span>
           
           <code class="ruby">    redirect_to results_path if cookies[:completed]</code>
         </li>
@@ -956,14 +956,14 @@
           <code class="ruby">  def deduct_redirect_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="79">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="79">
+          <span class="hits">4</span>
           
           <code class="ruby">    if cookies[:question_number].eql? 6</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="80">
-          
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
           
           <code class="ruby">      finish_quiz</code>
         </li>
@@ -974,8 +974,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="82">
+          <span class="hits">3</span>
           
           <code class="ruby">      redirect_to &quot;/quizzes/question_#{cookies[:question_number]}&quot;</code>
         </li>
@@ -1004,38 +1004,38 @@
           <code class="ruby">  def finish_quiz</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="87">
-          
+        <li class="covered" data-hits="1" data-linenumber="87">
+          <span class="hits">1</span>
           
           <code class="ruby">    quiz = Quiz.find(cookies[:quiz_id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="88">
-          
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
           
           <code class="ruby">    quiz.update(completed: true)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="89">
-          
+        <li class="covered" data-hits="1" data-linenumber="89">
+          <span class="hits">1</span>
           
           <code class="ruby">    cookies.permanent[:completed] = true</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="90">
-          
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
           
           <code class="ruby">    cookies.delete :question_number</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="91">
-          
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
           
           <code class="ruby">    cookies.delete :quiz_id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="92">
-          
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
           
           <code class="ruby">    redirect_to results_path</code>
         </li>
@@ -1058,8 +1058,8 @@
           <code class="ruby">  def set_quiz</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="96">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="11" data-linenumber="96">
+          <span class="hits">11</span>
           
           <code class="ruby">    @quiz = Quiz.find(cookies[:quiz_id])</code>
         </li>
@@ -1082,8 +1082,8 @@
           <code class="ruby">  def quiz_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="100">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="100">
+          <span class="hits">7</span>
           
           <code class="ruby">    params.require(:quiz).permit(:answer1, :answer2, :answer3, :answer4,</code>
         </li>
@@ -1267,26 +1267,26 @@
           <code class="ruby">  def self.retrieve_answers_distribution</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="3">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="3">
+          <span class="hits">4</span>
           
           <code class="ruby">    answers_distribution = []</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="4">
+          <span class="hits">4</span>
           
           <code class="ruby">    answers_distribution &lt;&lt; build_answer_with_two_options(&quot;Yes&quot;, &quot;No&quot;, &quot;answer1&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="5">
+          <span class="hits">4</span>
           
           <code class="ruby">    answers_distribution &lt;&lt; build_answer_with_three_options(&quot;1 month&quot;, &quot;6 months&quot;, &quot;1 year&quot;, &quot;answer2&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="6">
+          <span class="hits">4</span>
           
           <code class="ruby">    answers_distribution &lt;&lt; build_answer_with_four_options(&quot;Java&quot;, &quot;Ruby&quot;, &quot;Javascript&quot;, &quot;C&quot;, &quot;answer3&quot;)</code>
         </li>
@@ -1297,14 +1297,14 @@
           <code class="ruby">    answers_distribution &lt;&lt; build_answer_with_four_options(&quot;less than 1 year&quot;, &quot;1-2 years&quot;, &quot;2-3 years&quot;, &quot;3-4 years&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
           <code class="ruby">                                                           &quot;answer4&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="9">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="9">
+          <span class="hits">4</span>
           
           <code class="ruby">    answers_distribution &lt;&lt; build_answer_with_three_options(&quot;No!&quot;, &quot;Yes&quot;, &quot;Maybe :(&quot;, &quot;answer5&quot;)</code>
         </li>
@@ -1327,44 +1327,44 @@
           <code class="ruby">  def self.build_answer_with_two_options(option1, option2, answer_number)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="13">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="13">
+          <span class="hits">5</span>
           
           <code class="ruby">    filtered_quiz = []</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="14">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="14">
+          <span class="hits">5</span>
           
           <code class="ruby">    quiz = Quiz.where(completed: true).group(answer_number).count</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="15">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="15">
+          <span class="hits">5</span>
           
           <code class="ruby">    quiz.each do |value, quantity|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="16">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="16">
+          <span class="hits">4</span>
           
           <code class="ruby">      answer = {}</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="17">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="17">
+          <span class="hits">4</span>
           
           <code class="ruby">      answer[:name] = value == 1 ? option1 : option2</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="18">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="18">
+          <span class="hits">4</span>
           
           <code class="ruby">      answer[:y] = quantity</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="19">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="19">
+          <span class="hits">4</span>
           
           <code class="ruby">      filtered_quiz &lt;&lt; answer</code>
         </li>
@@ -1375,8 +1375,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="21">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="21">
+          <span class="hits">5</span>
           
           <code class="ruby">    filtered_quiz</code>
         </li>
@@ -1399,38 +1399,38 @@
           <code class="ruby">  def self.build_answer_with_three_options(option1, option2, option3, answer_number)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="25">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="9" data-linenumber="25">
+          <span class="hits">9</span>
           
           <code class="ruby">    filtered_quiz = []</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="26">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="9" data-linenumber="26">
+          <span class="hits">9</span>
           
           <code class="ruby">    quiz = Quiz.where(completed: true).group(answer_number).count</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="27">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="9" data-linenumber="27">
+          <span class="hits">9</span>
           
           <code class="ruby">    quiz.each do |value, quantity|</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="28">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="28">
+          <span class="hits">7</span>
           
           <code class="ruby">      answer = {}</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="29">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="29">
+          <span class="hits">7</span>
           
           <code class="ruby">      answer[:name] = if value.eql? 1</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="30">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="30">
+          <span class="hits">3</span>
           
           <code class="ruby">                        option1</code>
         </li>
@@ -1441,8 +1441,8 @@
           <code class="ruby">                      elsif value.eql? 2</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="32">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="32">
+          <span class="hits">4</span>
           
           <code class="ruby">                        option2</code>
         </li>
@@ -1465,14 +1465,14 @@
           <code class="ruby">                      end</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="36">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="36">
+          <span class="hits">7</span>
           
           <code class="ruby">      answer[:y] = quantity</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="37">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="37">
+          <span class="hits">7</span>
           
           <code class="ruby">      filtered_quiz &lt;&lt; answer</code>
         </li>
@@ -1483,8 +1483,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="39">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="9" data-linenumber="39">
+          <span class="hits">9</span>
           
           <code class="ruby">    filtered_quiz</code>
         </li>
@@ -1507,38 +1507,38 @@
           <code class="ruby">  def self.build_answer_with_four_options(option1, option2, option3, option4, answer_number)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="43">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="9" data-linenumber="43">
+          <span class="hits">9</span>
           
           <code class="ruby">    filtered_quiz = []</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="44">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="9" data-linenumber="44">
+          <span class="hits">9</span>
           
           <code class="ruby">    quiz = Quiz.where(completed: true).group(answer_number).count</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="45">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="9" data-linenumber="45">
+          <span class="hits">9</span>
           
           <code class="ruby">    quiz.each do |value, quantity|</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="46">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="46">
+          <span class="hits">7</span>
           
           <code class="ruby">      answer = {}</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="47">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="47">
+          <span class="hits">7</span>
           
           <code class="ruby">      answer[:name] = if value.eql? 1</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="48">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="48">
+          <span class="hits">4</span>
           
           <code class="ruby">                        option1</code>
         </li>
@@ -1549,8 +1549,8 @@
           <code class="ruby">                      elsif value.eql? 2</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="50">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="50">
+          <span class="hits">3</span>
           
           <code class="ruby">                        option2</code>
         </li>
@@ -1585,14 +1585,14 @@
           <code class="ruby">                      end</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="56">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="56">
+          <span class="hits">7</span>
           
           <code class="ruby">      answer[:y] = quantity</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="57">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="57">
+          <span class="hits">7</span>
           
           <code class="ruby">      filtered_quiz &lt;&lt; answer</code>
         </li>
@@ -1603,8 +1603,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="59">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="9" data-linenumber="59">
+          <span class="hits">9</span>
           
           <code class="ruby">    filtered_quiz</code>
         </li>
@@ -3087,8 +3087,8 @@
     <h3>spec/controllers/quizzes_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>48</b> relevant lines. 
-      <span class="green"><b>48</b> lines covered</span> and
+      <b>113</b> relevant lines. 
+      <span class="green"><b>113</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3114,8 +3114,8 @@
           <code class="ruby">RSpec.describe QuizzesController, type: :controller do</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="4">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="16" data-linenumber="4">
+          <span class="hits">16</span>
           
           <code class="ruby">  let(:quiz) { FactoryGirl.create :quiz }</code>
         </li>
@@ -3447,97 +3447,97 @@
         <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;POST #create&quot; do</code>
+          <code class="ruby">  describe &quot;GET #answers_distribution&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;saves the quiz with the first answer&quot; do</code>
+          <code class="ruby">    it &quot;is a json response&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 1</code>
+          <code class="ruby">      get :answers_distribution</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
-          <code class="ruby">      post :create, params: { quiz: { answer1: 1 } }</code>
+          <code class="ruby">      expect(response.header[&#39;Content-Type&#39;]).to eq &#39;application/json; charset=utf-8&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(response.cookies[&#39;question_number&#39;]).to eq(&#39;2&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(Quiz.last.answer1).to eq(1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;PATCH #update&quot; do</code>
+          <code class="ruby">    it &quot;has the answers distribution for each question&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="69">
+        <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;updates the user quiz with the next answer&quot; do</code>
+          <code class="ruby">      FactoryGirl.create(:quiz)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
-          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+          <code class="ruby">      expected_answers_distribution = [[{&quot;name&quot;=&gt;&quot;Yes&quot;, &quot;y&quot;=&gt;1}],</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="71">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="68">
           
-          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 2</code>
+          
+          <code class="ruby">                                      [{&quot;name&quot;=&gt;&quot;6 months&quot;, &quot;y&quot;=&gt;1}],</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">                                      [{&quot;name&quot;=&gt;&quot;Java&quot;, &quot;y&quot;=&gt;1}],</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">                                      [{&quot;name&quot;=&gt;&quot;1-2 years&quot;, &quot;y&quot;=&gt;1}],</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">                                      [{&quot;name&quot;=&gt;&quot;No!&quot;, &quot;y&quot;=&gt;1}]]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="72">
           <span class="hits">1</span>
           
-          <code class="ruby">      put :update, params: { id: quiz.id, quiz: { answer2: 2 } }</code>
+          <code class="ruby">      get :answers_distribution</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="73">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(response.cookies[&#39;question_number&#39;]).to eq(&#39;3&#39;)</code>
+          <code class="ruby">      answers_distribution = JSON.parse response.body</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(Quiz.last.answer2).to eq(2)</code>
+          <code class="ruby">      expect(answers_distribution).to eq(expected_answers_distribution)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
@@ -3555,10 +3555,580 @@
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;allow_request&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;allows the request if this is the current user question&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :question_2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to have_http_status(:success)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;blocks the request if the user is trying to go back using the url&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="87">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 3</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="89">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :question_2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      response.should redirect_to &quot;/quizzes/question_3&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="91">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;handle_completed_request&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;allows the request if the quiz is not completed yet&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="97">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :question_2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="99">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to have_http_status(:success)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="102">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;blocks the request if the quiz is completed&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:completed] = true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="105">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :question_2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="106">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      response.should redirect_to results_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="110">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;POST #create&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="111">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;saves the quiz with the first answer&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="112">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 1</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="113">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      post :create, params: { quiz: { answer1: 1 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="114">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response.cookies[&#39;question_number&#39;]).to eq(&#39;2&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="115">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Quiz.last.answer1).to eq(1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="116">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="118">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;blocks creation if the user tries to go back using the go back button from the browser&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="119">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="120">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="121">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      post :create, params: { quiz: { answer1: 2 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="122">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Quiz.last.answer1).to eq(1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="123">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      response.should redirect_to &quot;/quizzes/question_2&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="124">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="125">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="126">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;allows creation if the user tries to answer it&#39;s current question&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="127">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="128">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 1</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="129">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      post :create, params: { quiz: { answer1: 2 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Quiz.last.answer1).to eq(2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="131">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="133">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="134">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;PATCH #update&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="135">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;updates the user quiz with the next answer&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="136">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="137">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="138">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      put :update, params: { id: quiz.id, quiz: { answer2: 2 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="139">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response.cookies[&#39;question_number&#39;]).to eq(&#39;3&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="140">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Quiz.last.answer2).to eq(2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="141">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="143">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;blocks updates if the user tries to go back using the go back button from the browser&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="144">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="145">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 4</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="146">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      put :update, params: { id: quiz.id, quiz: { answer3: 2 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="147">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Quiz.last.answer3).to eq(1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="148">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      response.should redirect_to &quot;/quizzes/question_4&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="149">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="150">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="151">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;allows updates if the user tries to answer it&#39;s current question&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="152">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="153">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 3</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="154">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      put :update, params: { id: quiz.id, quiz: { answer3: 2 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="155">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Quiz.last.answer3).to eq(2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="156">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;deduct the next route based on the question_number cookie&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="159">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="160">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 3</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="161">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      put :update, params: { id: quiz.id, quiz: { answer3: 2 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="162">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      response.should redirect_to &quot;/quizzes/question_4&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="163">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="164">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="165">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;redirects to results screen if the user completes the quiz&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="166">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[:quiz_id] = quiz.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="167">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      request.cookies[&#39;question_number&#39;] = 5</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="168">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      put :update, params: { id: quiz.id, quiz: { answer5: 2 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="169">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      response.should redirect_to results_path</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="170">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response.cookies[&#39;completed&#39;]).to eq(&quot;true&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="171">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="172">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="173">
           
           
           <code class="ruby">end</code>
